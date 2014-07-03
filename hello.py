@@ -25,7 +25,7 @@ app.debug = True
 def hello():
 
 	urlparse.uses_netloc.append("postgres")
-	url = urlparse.urlparse(os.environ["DATABASE_URL"])
+	url = urlparse.urlparse(os.environ["postgres://pkjzpvyckjdzbl:GbH_pvSv1GhOIQC5VRD1NKkmUb@ec2-174-129-218-200.compute-1.amazonaws.com:5432/d64hrkgakrskqs"])
 
 	# output  = "DATABASE_URL value:" +str(os.environ["DATABASE_URL"]) +"\n"
 	# output += "scheme: " + str(url.scheme) +"\n"
@@ -45,7 +45,7 @@ def hello():
 	if conn != None:
 	output = "Connected to database successfully!\n"
 	conn.close()
-	return "&lt;pre&gt;"+output+"&lt;/pre&gt;"
+	return output
 
 
 	# db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
