@@ -1,0 +1,79 @@
+[
+    {
+        "lat": "-6.13",
+        "city": "ZANZIBAR",
+        "code": "ZNZ",
+        "lon": "39.31",
+        "country": "TANZANIA"
+    },
+    {
+        "lat": "35.68",
+        "city": "TOKYO",
+        "code": "TYO",
+        "lon": "139.76",
+        "country": "JAPAN"
+    },
+    {
+        "lat": "-36.85",
+        "city": "AUCKLAND",
+        "code": "AKL",
+        "lon": "174.78",
+        "country": "NEW ZEALAND"
+    },
+    {
+        "lat": "13.75",
+        "city": "BANGKOK",
+        "code": "BKK",
+        "lon": "100.48",
+        "country": "THAILAND"
+    },
+    {
+        "lat": "29.01",
+        "city": "DELHI",
+        "code": "DEL",
+        "lon": "77.38",
+        "country": "INDIA"
+    },
+    {
+        "lat": "1.36",
+        "city": "SINGAPORE",
+        "code": "SIN",
+        "lon": "103.75",
+        "country": "SINGAPOR"
+    },
+    {
+        "lat": "-15.67",
+        "city": "BRASILIA",
+        "code": "BSB",
+        "lon": "-47.43",
+        "country": "BRAZIL"
+    },
+    {
+        "lat": "-22.90",
+        "city": "RIO DE JANEIRO",
+        "code": "RIO",
+        "lon": "-43.24",
+        "country": "BRAZIL"
+    },
+    {
+        "lat": "43.64",
+        "city": "TORONTO",
+        "code": "YTO",
+        "lon": "-79.40",
+        "country": "CANADA"
+    },
+    {
+        "lat": "-27.11",
+        "city": "EASTER ISLAND",
+        "code": "IPC",
+        "lon": "-109.36",
+        "country": "CHILE"
+    },
+    {
+        "lat": "47.61",
+        "city": "SEATTLE",
+        "code": "SEA",
+        "lon": "-122.33",
+        "country": "USA"
+    }
+]

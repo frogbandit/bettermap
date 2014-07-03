@@ -1,0 +1,6 @@
+{"objects":[
+{"point":{"coordinates":[-14.5066,-49.42742]},"totalsize": 11.22172,"country":"Brazil","project":"Project Chapada","commodity":[{"type":"Gold","size":3.00562},{"type":"Copper","size":8.2161}]},
+{"point":{"coordinates":[-27.37083,-66.28]},"totalsize": 3.39,"country":"Argentina","project":"Project Agua Rica","commodity":[{"type":"Gold","size":0.14},{"type":"Copper","size":0.39},{"type":"Silver","size":2.82},{"type":"Molybdenum","size":0.04}]},
+{"point":{"coordinates":[-31.03397,122.56]},"totalsize": 34,"country":"Australia","project":"Project Argyle Diamond","commodity":[{"type":"Diamond","size": 34}]},
+{"point":{"coordinates":[-20.7706,117.6915]},"totalsize": 66.6,"country":"Australia","project":"Project Balla Balla / Forge","commodity":[{"type":"Iron","size": 48.9},{"type":"Titanium Dioxide","size": 17.7}]}
+]}

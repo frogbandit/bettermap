@@ -1,0 +1,11 @@
+
+[{"rank":1,"place":"New York city","population":8175133,"lat":40.71455,"lon":-74.007124},
+{"rank":2,"place":"Los Angeles city","population":3792621,"lat":34.05349,"lon":-118.245323},
+{"rank":3,"place":"Chicago city","population":2695598,"lat":45.37399,"lon":-92.888759},
+{"rank":4,"place":"Houston city","population":2099451,"lat":41.337462,"lon":-75.733627},
+{"rank":5,"place":"Philadelphia city","population":1526006,"lat":37.15477,"lon":-94.486114},
+{"rank":6,"place":"Phoenix city","population":1445632,"lat":32.46764,"lon":-85.000823},
+{"rank":7,"place":"San Antonio city","population":1327407,"lat":37.706576,"lon":-122.440612},
+{"rank":8,"place":"San Diego city","population":1307402,"lat":37.707815,"lon":-122.466624},
+{"rank":9,"place":"Dallas city","population":1197816,"lat":40.636,"lon":-91.168309},
+{"rank":10,"place":"San Jose city","population":945942,"lat":41.209716,"lon":-112.003047}]
