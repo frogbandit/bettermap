@@ -33,8 +33,8 @@ def hello():
 	s = users.select(not_(users.c.latitude == 0))
 
 	rs = s.execute()
-	rows = rs.fetchmany(1)
-	return rows
+	rows = rs.fetchmany(5)
+	
 	#196880
 	#Moghoweyik River
 	# #-171.6199
@@ -88,7 +88,7 @@ def hello():
 
 
 
-	# return render_template("earthquake.html")
+	return render_template("earthquake.html")
 
 
 # if __name__ == "__main__":
