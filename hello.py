@@ -6,7 +6,8 @@ from sqlalchemy import *
 
 import os 
 import psycopg2
-import urlparse
+# import urlparse
+import urllib.parse
 
 
 app = Flask(__name__)
@@ -24,8 +25,8 @@ app.debug = True
 # @app.route("/search", methods=["GET", "POST"])
 def hello():
 
-	urlparse.uses_netloc.append("postgres")
-	url = urlparse.urlparse(os.environ["DATABASE_URL"])
+	urllib.parse.uses_netloc.append("postgres")
+	url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
 
 	output  = "DATABASE_URL value:" +str(os.environ["DATABASE_URL"]) +"\n"
 	output += "scheme: " + str(url.scheme) +"\n"
