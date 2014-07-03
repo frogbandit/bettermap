@@ -32,10 +32,10 @@ def hello():
 	## url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 	conn = psycopg2.connect(
-	    database='postgres',
-	    user='postgres',
-	    password='cloudminer',
-	    host='localhost',
+	    database='d4ej7n7dsh1s1n',
+	    user='gqlskkqipzmtai',
+	    password='1tuYJio5GMTI7-iWpZ6YlzgHH_',
+	    host='ec2-54-228-195-37.eu-west-1.compute.amazonaws.com',
 	    port=5432
 	 )
 
