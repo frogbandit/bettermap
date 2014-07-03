@@ -1,15 +1,13 @@
-# from flask import Flask, render_template, request
-# from sqlalchemy import *
-# import simplejson as json
-# import collections
-# import requests
+from flask import Flask, render_template, request
+from sqlalchemy import *
+import simplejson as json
+import collections
+import requests
 
-# import os 
-# import psycopg2
-# import urlparse
+import os 
+import psycopg2
+import urlparse
 
-import os
-from flask import Flask
 
 app = Flask(__name__)
 
@@ -24,20 +22,21 @@ app = Flask(__name__)
 
 # @app.route("/search", methods=["GET", "POST"])
 def hello():
-	return "hello world"
 
 	# db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
-	# metadata = MetaData(db)
-	# users = Table('map_resources_table', metadata, autoload=True)
-	# #users = Table('map_user_projects', metadata, autoload=True)
-	# #s = users.select(and_(not_(users.c.latitude == 0))).order_by("longitude DESC")
-	# #users.c.id != 114806, users.c.id!= 114716, users.c.id != 114859
-	# s = users.select(not_(users.c.latitude == 0))
+	db = create_engine('postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n')
+	metadata = MetaData(db)
+	users = Table('map_resources_table', metadata, autoload=True)
+	#users = Table('map_user_projects', metadata, autoload=True)
+	#s = users.select(and_(not_(users.c.latitude == 0))).order_by("longitude DESC")
+	#users.c.id != 114806, users.c.id!= 114716, users.c.id != 114859
+	s = users.select(not_(users.c.latitude == 0))
 
-	# rs = s.execute()
-	# rows = rs.fetchmany(100000)
-	# #196880
-	# #Moghoweyik River
+	rs = s.execute()
+	rows = rs.fetchmany(1)
+	return rows
+	#196880
+	#Moghoweyik River
 	# #-171.6199
 
 	# rowarray_list = []
