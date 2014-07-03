@@ -24,29 +24,27 @@ app.debug = True
 # @app.route("/search", methods=["GET", "POST"])
 def hello():
 
+	
+	#url = urlparse.urlparse(os.environ["postgres://pkjzpvyckjdzbl:GbH_pvSv1GhOIQC5VRD1NKkmUb@ec2-174-129-218-200.compute-1.amazonaws.com:5432/d64hrkgakrskqs"])
 	urlparse.uses_netloc.append("postgres")
-	url = urlparse.urlparse(os.environ["postgres://pkjzpvyckjdzbl:GbH_pvSv1GhOIQC5VRD1NKkmUb@ec2-174-129-218-200.compute-1.amazonaws.com:5432/d64hrkgakrskqs"])
 
-	# output  = "DATABASE_URL value:" +str(os.environ["DATABASE_URL"]) +"\n"
-	# output += "scheme: " + str(url.scheme) +"\n"
-	# output += "netloc: " + str(url.netloc) +"\n"
-	# output += "  path: " + str(url.path[1:]) +"\n"
-	# output += "  user: " + str(url.username) +"\n"
-	# output += "passwd: " + str(url.password) +"\n"
+	##url = urlparse.urlparse("postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n")
+	## url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 	conn = psycopg2.connect(
-	    database=url.path[1:],
-	    user=url.username,
-	    password=url.password,
-	    host=url.hostname,
-	    port=url.port
-	)
+	    database='postgres',
+	    user='postgres',
+	    password='cloudminer',
+	    host='localhost',
+	    port=5432
+	 )
 
-	if conn != None:
-	output = "Connected to database successfully!\n"
-	conn.close()
-	return output
+	cur = conn.cursor()
 
+	cur.execute("SELECT company FROM map_user_projects WHERE id = 5")
+
+	# print "Connect Successfully. Some records from test site\n", cur.fetchall()
+	return cur.fetchall()[0]
 
 	# db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
 	# # db = create_engine('postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n')
@@ -118,5 +116,5 @@ def hello():
 	#return render_template("earthquake.html")
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
