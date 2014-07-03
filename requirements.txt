@@ -8,3 +8,4 @@ Twisted==12.2.0
 Werkzeug==0.9.4
 gunicorn==19.0.0
 simplejson==3.5.2
+psycopg2==2.5.3

@@ -5,11 +5,12 @@ from sqlalchemy import *
 # import requests
 
 import os 
-# import psycopg2
-# import urlparse
+import psycopg2
+import urlparse
 
 
 app = Flask(__name__)
+app.debug = True
 
 # @app.route('/', methods = ['POST'])
 # def getPersonById():
@@ -23,19 +24,43 @@ app = Flask(__name__)
 # @app.route("/search", methods=["GET", "POST"])
 def hello():
 
-	db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
-	# db = create_engine('postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n')
-	metadata = MetaData(db)
-	users = Table('map_resources_table', metadata, autoload=True)
-	#users = Table('map_user_projects', metadata, autoload=True)
-	#s = users.select(and_(not_(users.c.latitude == 0))).order_by("longitude DESC")
-	#users.c.id != 114806, users.c.id!= 114716, users.c.id != 114859
-	s = users.select(not_(users.c.latitude == 0))
+	urlparse.uses_netloc.append("postgres")
+	url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
-	rs = s.execute()
-	rows = rs.fetchmany(5)
+	output  = "DATABASE_URL value:" +str(os.environ["DATABASE_URL"]) +"\n"
+	output += "scheme: " + str(url.scheme) +"\n"
+	output += "netloc: " + str(url.netloc) +"\n"
+	output += "  path: " + str(url.path[1:]) +"\n"
+	output += "  user: " + str(url.username) +"\n"
+	output += "passwd: " + str(url.password) +"\n"
 
-	return "lol"
+	conn = psycopg2.connect(
+	    database=url.path[1:],
+	    user=url.username,
+	    password=url.password,
+	    host=url.hostname,
+	    port=url.port
+	)
+
+	if conn != None:
+	output += "Connected to database successfully!\n"
+	conn.close()
+	return "&lt;pre&gt;"+output+"&lt;/pre&gt;"
+
+
+	# db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
+	# # db = create_engine('postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n')
+	# metadata = MetaData(db)
+	# users = Table('map_resources_table', metadata, autoload=True)
+	# #users = Table('map_user_projects', metadata, autoload=True)
+	# #s = users.select(and_(not_(users.c.latitude == 0))).order_by("longitude DESC")
+	# #users.c.id != 114806, users.c.id!= 114716, users.c.id != 114859
+	# s = users.select(not_(users.c.latitude == 0))
+
+	# rs = s.execute()
+	# rows = rs.fetchmany(5)
+
+	# return "lol"
 	
 	#196880
 	#Moghoweyik River
@@ -93,5 +118,5 @@ def hello():
 	#return render_template("earthquake.html")
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
