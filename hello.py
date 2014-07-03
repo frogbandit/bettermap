@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from sqlalchemy import *
-# import simplejson as json
+import simplejson as json
 # import collections
 # import requests
 
@@ -116,5 +116,5 @@ def hello():
 	return render_template("earthquake.html")
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
