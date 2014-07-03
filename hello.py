@@ -6,7 +6,7 @@ from sqlalchemy import *
 
 import os 
 import psycopg2
-import urlparse
+#import urlparse
 
 
 app = Flask(__name__)
@@ -26,7 +26,7 @@ def hello():
 
 	
 	#url = urlparse.urlparse(os.environ["postgres://pkjzpvyckjdzbl:GbH_pvSv1GhOIQC5VRD1NKkmUb@ec2-174-129-218-200.compute-1.amazonaws.com:5432/d64hrkgakrskqs"])
-	urlparse.uses_netloc.append("postgres")
+	#urlparse.uses_netloc.append("postgres")
 
 	##url = urlparse.urlparse("postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n")
 	## url = urlparse.urlparse(os.environ["DATABASE_URL"])

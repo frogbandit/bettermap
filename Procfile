@@ -1,1 +1,1 @@
-web: gunicorn connHerokuTestSite:app
+web: gunicorn hello:app
