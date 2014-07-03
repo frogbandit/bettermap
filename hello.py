@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request
 from sqlalchemy import *
-import simplejson as json
-import collections
-import requests
+# import simplejson as json
+# import collections
+# import requests
 
 import os 
-import psycopg2
-import urlparse
+# import psycopg2
+# import urlparse
 
 
 app = Flask(__name__)
