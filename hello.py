@@ -6,8 +6,7 @@ from sqlalchemy import *
 
 import os 
 import psycopg2
-# import urlparse
-import urllib.parse
+import urlparse
 
 
 app = Flask(__name__)
@@ -25,15 +24,15 @@ app.debug = True
 # @app.route("/search", methods=["GET", "POST"])
 def hello():
 
-	urllib.parse.uses_netloc.append("postgres")
-	url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
+	urlparse.uses_netloc.append("postgres")
+	url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
-	output  = "DATABASE_URL value:" +str(os.environ["DATABASE_URL"]) +"\n"
-	output += "scheme: " + str(url.scheme) +"\n"
-	output += "netloc: " + str(url.netloc) +"\n"
-	output += "  path: " + str(url.path[1:]) +"\n"
-	output += "  user: " + str(url.username) +"\n"
-	output += "passwd: " + str(url.password) +"\n"
+	# output  = "DATABASE_URL value:" +str(os.environ["DATABASE_URL"]) +"\n"
+	# output += "scheme: " + str(url.scheme) +"\n"
+	# output += "netloc: " + str(url.netloc) +"\n"
+	# output += "  path: " + str(url.path[1:]) +"\n"
+	# output += "  user: " + str(url.username) +"\n"
+	# output += "passwd: " + str(url.password) +"\n"
 
 	conn = psycopg2.connect(
 	    database=url.path[1:],
@@ -44,7 +43,7 @@ def hello():
 	)
 
 	if conn != None:
-	output += "Connected to database successfully!\n"
+	output = "Connected to database successfully!\n"
 	conn.close()
 	return "&lt;pre&gt;"+output+"&lt;/pre&gt;"
 
