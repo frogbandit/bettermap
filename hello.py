@@ -23,8 +23,8 @@ app = Flask(__name__)
 # @app.route("/search", methods=["GET", "POST"])
 def hello():
 
-	# db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
-	db = create_engine('postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n')
+	db = create_engine('postgresql://postgres:cloudminer@localhost:5432/postgres')
+	# db = create_engine('postgres://gqlskkqipzmtai:1tuYJio5GMTI7-iWpZ6YlzgHH_@ec2-54-228-195-37.eu-west-1.compute.amazonaws.com:5432/d4ej7n7dsh1s1n')
 	metadata = MetaData(db)
 	users = Table('map_resources_table', metadata, autoload=True)
 	#users = Table('map_user_projects', metadata, autoload=True)
@@ -34,6 +34,8 @@ def hello():
 
 	rs = s.execute()
 	rows = rs.fetchmany(5)
+
+	return "lol"
 	
 	#196880
 	#Moghoweyik River
@@ -88,8 +90,8 @@ def hello():
 
 
 
-	return render_template("earthquake.html")
+	#return render_template("earthquake.html")
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
